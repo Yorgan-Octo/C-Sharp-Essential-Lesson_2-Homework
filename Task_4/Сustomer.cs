@@ -8,15 +8,15 @@ namespace Task_4
 {
     internal class Сustomer
     {
-        private readonly int id = new Random().Next(1000,9999);
-
+        private readonly int id;
         public string Name { get; set; }
         public string LastName { get; set; }
-        public int Namber { get; set; }
+        public string Namber { get; set; }
 
 
-        public Сustomer(int id, string name, string lastName, int namber)
+        public Сustomer(string name, string lastName, string namber)
         {
+            this.id = new Random().Next(1000, 9999);
             Name = name;
             LastName = lastName;
             Namber = namber;
@@ -25,7 +25,8 @@ namespace Task_4
         public void ShowInfo()
         {
             Console.WriteLine(new String('-',80));
-            Console.WriteLine($"Клиент: {Name} {LastName} | Тел. {Namber}");
+            Console.WriteLine("Клиент:");
+            Console.WriteLine($"ФІО {Name} {LastName} | Тел. {Namber}");
             Console.WriteLine(new String('-', 80));
         }
 

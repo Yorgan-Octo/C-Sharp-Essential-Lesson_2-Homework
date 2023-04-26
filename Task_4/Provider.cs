@@ -9,13 +9,14 @@ namespace Task_4
     internal class Provider
     {
 
-        private readonly int id = new Random().Next(1000, 9999);
+        private readonly int id;
 
         public string Name { get; set; }
-        public int Namber { get; set; }
+        public string Namber { get; set; }
 
-       public Provider(int id, string name, int namber)
+       public Provider(string name, string namber)
         {
+            this.id = new Random().Next(1000, 9999);
             Name = name;
             Namber = namber;
         }
@@ -23,7 +24,8 @@ namespace Task_4
         public void ShowInfo()
         {
             Console.WriteLine(new String('-', 80));
-            Console.WriteLine($"Постачальник: {Name} | Тел. {Namber}");
+            Console.WriteLine("Постачальник:");
+            Console.WriteLine($"Назва: {Name} | Тел. {Namber}");
             Console.WriteLine(new String('-', 80));
         }
     }
